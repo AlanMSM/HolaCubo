@@ -20,6 +20,7 @@
             75,
             window.innerWidth / window.innerHeight
         );
+        // var camera = new THREE.OrthographicCamera();
         camera.position.z=5;
 
     //renderer
@@ -37,8 +38,7 @@
         //TIPO CUBO
         var geometryCube = new THREE.BoxGeometry(1,1,1); //3 LADOS Y 3 SEGMENTOS
         var cube = new THREE.Mesh(geometryCube,material)
-        cube.position.x=-2.5;
-            //scene.add(cube);
+            // scene.add(cube);
 
         //TIPO CIRCULO
         var geometryCircle = new THREE.CircleGeometry(1, 32, 0, Math.PI);
@@ -74,14 +74,14 @@
             //scene.add(sphere);
 
         //TIPO TOROIDE
-        var geometryTorus= new THREE.TorusGeometry(2,1,32,32,Math.PI);
+        var geometryTorus= new THREE.TorusGeometry(2,1,32,32);
         var torus=new THREE.Mesh(geometryTorus,material);
-            //scene.add(torus);
+        scene.add(torus);
 
         //TIPO ANILLO
         var geometryRing = new THREE.RingGeometry(1,1.5,32,5);
         var ring = new THREE.Mesh(geometryRing,material);
-        scene.add(ring);
+            //scene.add(ring);
         
     //orbit control
         var controls = new OrbitControls(camera,renderer.domElement);
